@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "soylent_green:nutrient_paste"
+  },
+  "result": "soylent_green:soylent_green",
+  "experience": 0.5,
+  "cookingtime": 200
+}
