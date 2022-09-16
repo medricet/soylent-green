@@ -1,14 +1,18 @@
 package com.medricet.soylent_green;
 
+import com.medricet.soylent_green.blocks.SoylentGreenBlock;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.Material;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.*;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
@@ -25,7 +29,13 @@ public class SoylentGreen implements ModInitializer {
     public static final Item AMBIGUOUS_MEAT = new Item(new FabricItemSettings().group(ItemGroup.FOOD));
     public static final Item NUTRIENT_PASTE = new Item(new FabricItemSettings().group(ItemGroup.MISC));
 
-    public static final Item SOYLENT_GREEN = new Item(new FabricItemSettings().group(ItemGroup.FOOD).food(FoodComponents.GOLDEN_CARROT));
+    public static final Item SOYLENT_GREEN =
+            new Item(new FabricItemSettings().group(ItemGroup.FOOD).food(FoodComponents.GOLDEN_CARROT));
+
+    public static final SoylentGreenBlock SOYLENT_GREEN_BLOCK =
+            new SoylentGreenBlock(FabricBlockSettings.of(Material.CACTUS).hardness(0.4f).sounds(BlockSoundGroup.WOOL));
+    public static final Item SOYLENT_GREEN_BLOCK_ITEM = new BlockItem(SOYLENT_GREEN_BLOCK,
+            new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS));
 
     public static final Identifier PLAYER_LOOT_TABLE_ID = EntityType.PLAYER.getLootTableId();
 
@@ -38,6 +48,10 @@ public class SoylentGreen implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier("soylent_green", "ambiguous_meat"), AMBIGUOUS_MEAT);
         Registry.register(Registry.ITEM, new Identifier("soylent_green", "nutrient_paste"), NUTRIENT_PASTE);
         Registry.register(Registry.ITEM, new Identifier("soylent_green", "soylent_green"), SOYLENT_GREEN);
+
+        Registry.register(Registry.BLOCK, new Identifier("soylent_green", "soylent_green_block"), SOYLENT_GREEN_BLOCK);
+        Registry.register(Registry.ITEM, new Identifier("soylent_green", "soylent_green_block"),
+                SOYLENT_GREEN_BLOCK_ITEM);
 
         // add ambiguous meat to the player loot table
 

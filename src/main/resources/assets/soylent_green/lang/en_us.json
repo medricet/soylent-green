@@ -3,5 +3,7 @@
 
   "item.soylent_green.ambiguous_meat": "Ambiguous Meat",
   "item.soylent_green.nutrient_paste": "Nutrient Paste",
-  "item.soylent_green.soylent_green": "Soylent Green"
+  "item.soylent_green.soylent_green": "Soylent Green",
+
+  "block.soylent_green.soylent_green_block": "Block of Soylent Green"
 }
