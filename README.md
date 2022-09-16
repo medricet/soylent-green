@@ -6,4 +6,3 @@ Special thanks to Thayle for the idea.
 
 - Clone this repository.
 - `./gradlew build`.
-- 
