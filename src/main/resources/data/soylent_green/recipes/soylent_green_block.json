@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "soylent_green:soylent_green"
+    }
+  },
+  "result": {
+    "item": "soylent_green:soylent_green_block",
+    "count": 1
+  }
+}

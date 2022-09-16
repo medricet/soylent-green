@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "soylent_green:soylent_green_block"
+    }
+  ],
+  "result": {
+    "item": "soylent_green:soylent_green",
+    "count": 9
+  }
+}
